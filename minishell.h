@@ -1,11 +1,16 @@
 #ifndef MINISHELL_H
 #define MINISHELL_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+# include <stdbool.h>
+# include <sys/types.h>
+# include <readline/readline.h>
+# include <readline/history.h>
+# include <stdio.h>
 
-typedef	struct_cmd
+typedef	struct s_cmd
 {
 	char		**arg;
 	char		*infile;

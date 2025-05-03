@@ -14,7 +14,6 @@
 #include <stdbool.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-#include <termios.h>
 #include "../libft/libft.h"
 
 typedef struct s_cmd

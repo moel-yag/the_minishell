@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "../../includes/minishell.h"
 
 void	builtin_echo(t_cmd *cmd)
 {

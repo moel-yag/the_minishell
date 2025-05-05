@@ -6,9 +6,9 @@ LIBFT	= $(LIBFT_DIR)/libft.a
 INCLUDES = -I includes -I $(LIBFT_DIR)/includes
 LIBS	= -L $(LIBFT_DIR) -lft -lreadline
 
-SRCS	= ../srcs/main.c  ../srcs/execution/execution.c  ../srcs/execution/buitins.c  \
-	  	../srcs/execution/signals.c  ../srcs/utils/utils.c  \
-		../lexer/lexer.c
+SRCS	= srcs/main.c  srcs/execution/execution.c  srcs/execution/builtins.c  \
+	  	srcs/execution/signals.c  srcs/utils/utils.c  \
+		srcs/lexer/lexer.c
 
 
 OBJS	= $(SRCS:.c=.o)

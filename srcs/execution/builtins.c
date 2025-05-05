@@ -6,12 +6,12 @@
 /*   By: moel-yag <moel-yag@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:33:50 by moel-yag          #+#    #+#             */
-/*   Updated: 2025/05/05 10:33:51 by moel-yag         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:02:17 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
-
+/*
 void	builtin_echo(t_cmd *cmd)
 {
 	bool	n_flag;
@@ -61,3 +61,4 @@ void	builtin_cd(t_cmd *cmd)
 	else
 		update_pwd_env(oldpwd);
 }
+*/

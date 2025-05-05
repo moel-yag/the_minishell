@@ -6,9 +6,14 @@
 /*   By: moel-yag <moel-yag@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:34:31 by moel-yag          #+#    #+#             */
-/*   Updated: 2025/05/05 10:34:53 by moel-yag         ###   ########.fr       */
+/*   Updated: 2025/05/05 10:51:29 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+int main(int ac, char **av)
+{
+    
+    return (0);
+}

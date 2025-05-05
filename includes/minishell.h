@@ -6,7 +6,7 @@
 /*   By: moel-yag <moel-yag@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:33:45 by moel-yag          #+#    #+#             */
-/*   Updated: 2025/05/05 10:36:43 by moel-yag         ###   ########.fr       */
+/*   Updated: 2025/05/05 10:46:26 by moel-yag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 # define PATH_MAX 4096
 
-enum				e_token
+enum	e_token
 {
 	STRING = 'S',
 	IN_FILE = 'I',
@@ -48,8 +48,8 @@ enum				e_token
 typedef struct s_lexer
 {
 	char			*args;
-	enum e_token	type;
 	int				quotes;
+	enum e_token	type;
 	struct s_lexer	*next;
 }	t_lexer;
 

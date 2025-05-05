@@ -32,13 +32,14 @@
 
 enum	e_token
 {
-	STRING = 'S',
-	IN_FILE = 'I',
-	OUT_FILE = 'O',
-	PIPE = 'P',
-	D_QUOTES = '\"',
-	S_QUOTES = '\'',
-	HEREDOC = 'H',
+	T_WORD,
+        T_PIPE,
+        T_REDIR_IN,
+        T_REDIR_OUT,
+        T_REDIR_APPEND,
+        T_REDIR_HEREDOC,
+        T_EOF,
+        T_ERROR,
 	IN_A_FILE = 'A',
 	WITH_SPACE = 'W',
 	DOLLAR = '$',
@@ -47,7 +48,7 @@ enum	e_token
 
 typedef struct s_lexer
 {
-	char			*args;
+	char			*arg;
 	int				quotes;
 	enum e_token	type;
 	struct s_lexer	*next;
@@ -55,7 +56,7 @@ typedef struct s_lexer
 
 typedef struct s_cmd
 {
-	char			**arg;
+	char			**args;
 	char			*infile;
 	char			*outfile;
 	bool			append;

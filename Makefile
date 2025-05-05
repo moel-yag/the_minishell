@@ -10,7 +10,7 @@ SRCS	= srcs/main.c  srcs/execution/execution.c  srcs/execution/buitins.c  \
 	  srcs/execution/signals.c  \
 	  srcs/utils/utils.c
 
-OBJS	= $(SRCS: .c=.o)
+OBJS	= $(SRCS:.c=.o)
 
 all: $(LIBFT) $(NAME)
 

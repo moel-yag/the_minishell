@@ -1,37 +1,45 @@
-NAME	= minishell
+CC = cc
+LDFLAGS = -lreadline
+# CFLAGS = -Wall -Wextra -Werror
+# Source files
+SRC = src/main.c \
+	src/cmd.c\
+	src/integrate.c\
+	src/libft_functs1.c\
+	src/libft_utils.c\
+	src/parse_it.c\
+	src/utils.c\
+	src/syntax/validate_syntax.c\
+	src/syntax/files_syntax.c\
+	src/syntax/pipe_syntax.c\
+	src/syntax/syntax.c
+# Object files
+OBJ = $(SRC:.c=.o)
 
-CFLAGS	= -Wall -Wextra -Werror
-LIBFT_DIR = libft
-LIBFT	= $(LIBFT_DIR)/libft.a
-INCLUDES = -I includes -I $(LIBFT_DIR)/includes
-LIBS	= -L $(LIBFT_DIR) -lft -lreadline
+# Output binary name
+NAME = minishell
 
-SRCS	= srcs/main.c  srcs/execution/execution.c  srcs/execution/builtins.c  \
-	  	srcs/execution/signals.c  srcs/utils/utils.c  \
-		srcs/lexer/lexer.c
+# Default target
+all: $(NAME)
 
+# Linking the binary
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME) $(LDFLAGS)
 
-OBJS	= $(SRCS:.c=.o)
-
-all: $(LIBFT) $(NAME)
-
-$(NAME): $(OBJS)
-	@cc $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
-
-$(LIBFT):
-	@make -C $(LIBFT_DIR)
-
+# Compiling object files
 %.o: %.c
-	@cc $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) -c $< -o $@
 
+# Cleaning object files
 clean:
-	@rm -f $(OBJS)
-	@make -C $(LIBFT_DIR) clean
+	rm -f $(OBJ)
 
+# Cleaning everything
 fclean: clean
-	@rm -f $(NAME)
-	@make -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
 
+# Rebuild everything
 re: fclean all
 
+# Phony targets
 .PHONY: all clean fclean re

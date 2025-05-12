@@ -1,12 +1,14 @@
 #include "../../includes/minishell.h"
 
-bool file_syntax(const char *input) {
+bool file_syntax(const char *input)
+{
     int i;
 
     i = 0;
     bool in_single = false, in_double = false;
 
-    while (input[i]) {
+    while (input[i])
+    {
         // Update quote states
         if (input[i] == '\'' && !in_double)
             in_single = !in_single;
@@ -39,7 +41,8 @@ bool file_syntax(const char *input) {
                 // Check filename exists
                 int j = i + 1;
                 while (input[j] == ' ' || input[j] == '\t') j++;
-                if (!input[j] || ft_strchr("<>|&", input[j])) {
+                if (!input[j] || ft_strchr("<>|&", input[j]))
+                {
                     printf("Syntax error: missing filename\n");
                     return false;
                 }

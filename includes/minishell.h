@@ -11,6 +11,18 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 
+// Environment variable structure (if not already defined)
+typedef struct s_env {
+    char *name;
+    char *value;
+    struct s_env *next;
+} t_env;
+
+// Function prototypes
+bool    is_valid_env_name(const char *name);
+void    update_env(t_env **env_list, char *name, char *value);
+void    print_env_sorted(t_env *env_list);
+
 // Define the maximum length for command input
 #define MAX_CMD_LENGTH 1024
 
